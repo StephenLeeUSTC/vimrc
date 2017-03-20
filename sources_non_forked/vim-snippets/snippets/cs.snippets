@@ -56,7 +56,7 @@
 #
 # Feedback is welcome!
 #
-# Main 
+# Main
 snippet sim
 	${1:public }static int Main(string[] args) {
 		${0}
@@ -76,15 +76,15 @@ snippet svm
 # if condition
 snippet if
 	if (${1:true}) {
-		${0}
+		${0:${VISUAL}}
 	}
 snippet el
 	else {
-		${0}
+		${0:${VISUAL}}
 	}
 snippet ifs
 	if (${1})
-		${0}
+		${0:${VISUAL}}
 # ternary conditional
 snippet t
 	${1} ? ${2} : ${0}
@@ -93,12 +93,12 @@ snippet ?
 # do while loop
 snippet do
 	do {
-		${0}
+		${0:${VISUAL}}
 	} while (${1:true});
 # while loop
 snippet wh
 	while (${1:true}) {
-		${0}
+		${0:${VISUAL}}
 	}
 # for loop
 snippet for
@@ -358,7 +358,7 @@ snippet enum
 	enum ${1} {
 		${0}
 	}
-	
+
 snippet enum+
 	public enum ${1} {
 		${0}
@@ -378,7 +378,7 @@ snippet <p
 snippet <ex
 	<exception cref="${1:System.Exception}">${2}</exception>
 snippet <r
-	<returns>${1}</returns>{
+	<returns>${1}</returns>
 snippet <s
 	<see cref="${1}"/>
 snippet <rem
@@ -398,7 +398,7 @@ snippet eq
 		${0:throw new NotImplementedException();}
 		return base.Equals(obj);
 	}
-# exception 
+# exception
 snippet exc
 	public class ${1:MyException} : ${2:Exception} {
 		public $1() { }
@@ -409,13 +409,13 @@ snippet exc
 			System.Runtime.Serialization.StreamingContext context)
 				: base(info, context) { }
 	}
-# indexer 
+# indexer
 snippet index
 	public ${1:object} this[${2:int} index] {
 		get { ${0} }
 		set { ${0} }
 	}
-# eventhandler 
+# eventhandler
 snippet inv
 	EventHandler temp = ${1:MyEvent};
 	if (${2:temp} != null) {
@@ -442,7 +442,7 @@ snippet propf
 		}
 snippet propg
 	public ${1:int} ${2:MyProperty} { get; private set; }
-# switch    
+# switch
 snippet switch
 	switch (${1:switch_on}) {
 		${0}
@@ -451,14 +451,14 @@ snippet switch
 # try
 snippet try
 	try {
-			${0}
+			${0:${VISUAL}}
 	}
 	catch (${1:System.Exception}) {
 			throw;
 	}
 snippet tryf
 	try {
-		${0}
+		${0:${VISUAL}}
 	}
 	finally {
 		${1}
